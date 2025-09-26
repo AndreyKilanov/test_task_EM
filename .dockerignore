@@ -1,0 +1,81 @@
+# Python
+__pycache__
+*$py.class
+*.so
+*.egg
+*.egg-info
+dist
+build
+develop-eggs
+eggs
+lib
+lib64
+parts
+sdist
+var
+*.sqlite3
+*.mo
+*.pot
+*.log
+
+# Virtual Environment
+venv
+env
+.virtualenv
+.pyenv
+.env
+ENV
+
+# IDE / Editors
+.idea
+.vscode
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+*.project
+*.c9revisions
+
+# Git
+.git
+.gitignore
+.gitmodules
+
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Documentation
+.readme.md
+
+# Media
+media/
+
+# Static
+static
+staticfiles
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Config files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+*.yaml
+*.yml
+*.toml
+*.ini
+*.lock
+*.csv
+*.xlsx
+*.xls
+*.json
+*.xml
+*.bak
+*.tmp
