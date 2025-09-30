@@ -56,7 +56,7 @@ class CustomUser(AbstractUser):
     role = models.CharField(
         max_length=constants.CHARFIELD_MAX_LENGTH,
         choices=USER_ROLE_CHOICES,
-        default=UserRole.EMPLOYEE,
+        default=UserRole.USER,
         verbose_name=_('role'),
     )
     theme = models.CharField(
