@@ -1,3 +1,4 @@
+import os
 from datetime import timedelta
 from pathlib import Path
 
@@ -28,7 +29,7 @@ INSTALLED_APPS = [
 
     # apps
     'users',
-    'news',
+    'resources',
 
     # 3rd party
     "rest_framework",
@@ -77,10 +78,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': env.str('DB_NAME', default='newsportal'),
+            'NAME': env.str('DB_NAME', default='resources'),
             'USER': env.str('DB_USER', default='postgres'),
             'PASSWORD': env.str('DB_PASSWORD', default='postgres'),
-            'HOST': env.str('DB_HOST', default='localhost'),
+            'HOST': env.str('DB_HOST', default='postgres'),
             'PORT': env.str('DB_PORT', default='5432'),
         }
     }
@@ -115,9 +116,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Default primary key field type
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.CustomUser'
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
@@ -143,8 +149,8 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "NewsPortal",
-    "DESCRIPTION": "Documentation for NewsPortal project",
+    "TITLE": "Resources",
+    "DESCRIPTION": "Documentation for Resources project",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,
     "SWAGGER_UI_SETTINGS": {
